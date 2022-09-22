@@ -87,10 +87,54 @@ const hheading = document.querySelector('h5')
 // card.addEventListener('mouseleave', runEvent)
 // card.addEventListener('mouseover', runEvent)
 // card.addEventListener('mouseout', runEvent)
-card.addEventListener('mousemove', runEvent)
+//card.addEventListener('mousemove', runEvent)
 
+
+// function runEvent (e){
+//     heading.textContent = `MouseX: ${e.offsetX} Mouse Y: ${e.offsetY}`
+//     document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`
+// }
+
+//inputs and keyboarf events
+
+const form = document.querySelector('form')
+const taskInput = document.getElementById('task')
+taskInput.value = ""
+
+//keydown Event
+//taskInput.addEventListener('keydown', runEvent)
+
+
+//keyup
+//taskInput.addEventListener('keyup' , runEvent)
+
+//keypress
+//taskInput.addEventListener('keypress' , runEvent)
+//focus
+//taskInput.addEventListener('focus' , runEvent)
+
+//blur
+//taskInput.addEventListener('blur' , runEvent)
+
+//cut
+//taskInput.addEventListener('cut' , runEvent)
+
+//paste
+//taskInput.addEventListener('paste' , runEvent)
+
+//input 
+
+//taskInput.addEventListener('input' , runEvent)
+
+//form.addEventListener('submit', runEvent)
+const select = document.querySelector('select')
+
+select.addEventListener('change', runEvent)
 
 function runEvent (e){
-    heading.textContent = `MouseX: ${e.offsetX} Mouse Y: ${e.offsetY}`
-    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`
+    console.log(e.target.value)
+    console.log(`Event: ${e.type}`)
+    heading.style.backgroundColor = 'yellow'
 }
+
+//change
