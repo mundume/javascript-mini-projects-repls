@@ -45,5 +45,52 @@ li.appendChild(link)
 //append li
 list.appendChild(li)
 
+//replacing elements
 
-console.log(li)
+ //create element
+ const heading  = document.createElement('h2')
+ heading.id = 'task-title'
+
+heading.appendChild(document.createTextNode('bwibo'))
+//old heading
+const oldHeading  = document.getElementById('task-title')
+//oldHeading.textContent = 'aparo'
+
+const cardAction = document.querySelector('.card-action')
+
+cardAction.replaceChild (heading, oldHeading)
+
+//removing items
+const lis = document.querySelectorAll('li')
+const listi = document.querySelector('ul')
+//remove child
+listi.removeChild(lis[5])
+ 
+//remove atrributes & classes
+
+const firstLi = document.querySelector('li:first-child')
+const a = firstLi.children[0]
+let vaal;
+vaal = link.classList.remove()
+//console.log(vaal)
+
+
+
+const clearBtn = document.querySelector('.clear-tasks')
+const card = document.querySelector('.card')
+const hheading = document.querySelector('h5')
+
+//clearBtn.addEventListener('dblclick', runEvent)
+//clearBtn.addEventListener('mousedown' , runEvent)
+//clearBtn.addEventListener('mouseup', runEvent)
+// card.addEventListener('mouseenter', runEvent)
+// card.addEventListener('mouseleave', runEvent)
+// card.addEventListener('mouseover', runEvent)
+// card.addEventListener('mouseout', runEvent)
+card.addEventListener('mousemove', runEvent)
+
+
+function runEvent (e){
+    heading.textContent = `MouseX: ${e.offsetX} Mouse Y: ${e.offsetY}`
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`
+}
