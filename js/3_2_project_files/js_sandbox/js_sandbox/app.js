@@ -97,9 +97,22 @@ const hheading = document.querySelector('h5')
 
 //inputs and keyboarf events
 
-const form = document.querySelector('form')
-const taskInput = document.getElementById('task')
-taskInput.value = ""
+const form = document.querySelector('form').addEventListener('submit', (e)=>{
+    const task = document.getElementById('task').value
+    let tasks;
+
+    if(localStorage.getItem('tasks')===null){
+     tasks = []
+    }else{
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+    }
+    tasks.push(task)
+localStorage.setItem('tasks', JSON.stringify(tasks))
+alert('Task saved')
+e.preventDefault()
+})
+
+
 
 //keydown Event
 //taskInput.addEventListener('keydown', runEvent)
@@ -169,3 +182,13 @@ if(e.target.parentElement.classList.contains('delete-item')){
     e.target.parentElement.parentElement.remove()
    }
 }
+
+
+// local storage set item
+localStorage.setItem("name", "john")
+
+//set session Stotage
+//sessionStorage.setItem("name", "nzaih")
+
+//remove from storage
+//localStorage.removeItem('name')
